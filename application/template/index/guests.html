@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_ADD}index/index.css">
+    <link rel="stylesheet" href="{CSS_ADD}index/guests.css">
+
+    <script src="{JS_ADD}index/guests.js"></script>
+    <script src="{JS_ADD}index/jquery3.5.1.js"></script>
+    <script src="{JS_ADD}index/aniMath.js"></script>
+</head>
+<body>
+{include file=$header}
+<!--内容开始-->
+<div class="container" style="margin-bottom: 0;">
+    <div class="line"></div>
+    <div class="container-title">
+        <div class="container-cn">论坛嘉宾</div>
+        <div class="container-en">guests</div>
+    </div>
+    <div class="line-right" ></div>
+</div>
+<ul class="name-box">
+    <li class="name-item" style="margin-left: 0;">C</li>
+    <li class="name-item">D</li>
+    <li class="name-item">F</li>
+    <li class="name-item">G</li>
+    <li class="name-item">H</li>
+    <li class="name-item">J</li>
+    <li class="name-item" style="margin-left: 0;">L</li>
+    <li class="name-item">M</li>
+    <li class="name-item">N</li>
+    <li class="name-item">Q</li>
+    <li class="name-item">R</li>
+    <li class="name-item">S</li>
+    <li class="name-item" style="margin-left: 0;">T</li>
+    <li class="name-item">W</li>
+    <li class="name-item">X</li>
+    <li class="name-item">Y</li>
+    <li class="name-item">Z</li>
+    <li class="name-item" style="background: #f9f9f9;
+        border: 1px solid rgba(170,170,170,1);">全部</li>
+</ul>
+<div class="Guests-box">
+    {foreach $guestsinfo as $v}
+    <div class="Guests-item-box">
+        <a href="">
+            <div class="Guests-item">
+                <div class="Guests-item-img">
+                    <img src="{$v['imgurl']}" alt="">
+                </div>
+                <div class="Guests-item-line"></div>
+                <div class="Guests-item-dec">
+                    <div class="Guests-item-title">
+                        {$v['info']}
+                    </div>
+                    <div class="Guests-item-name-box">
+                        <div class="Guests-item-name">
+                            {$v['ctitle']}
+
+                        </div>
+                        <div class="Guests-item-name-dec">
+                            {$v['cons']}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {/foreach}
+
+</div>
+
+<!-- 内容结束 -->
+
+
+{include file=$footer}
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_ADD}index/index.css">
+    <link rel="stylesheet" href="{CSS_ADD}index/news.css">
+
+    <script src="{JS_ADD}index/news.js"></script>
+    <script src="{JS_ADD}index/jquery3.5.1.js"></script>
+    <script src="{JS_ADD}index/aniMath.js"></script>
+</head>
+<body>
+{include file=$header}
+<!-- 论坛动态开始 -->
+<div class="news-box">
+    <div class="container">
+        <div class="container-title" style="float: none;">
+            <div class="container-cn">论坛动态</div>
+            <div class="container-en">news</div>
+        </div>
+        <div class="news-tabs">
+            <ul class="news-tabs-list">
+                {foreach $soninfo as $v}
+                <li class="news-tabs-item">{$v['cname']}</li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!--省略了一些内容-->
+{foreach $soninfo as $v}
+<div class="news-details">
+    <div class="news-details-box">
+        {foreach $newsinfo as $v1}
+        <div class="news-details-item-box">
+            <div class="news-details-item">
+                <div class="news-details-left">
+                    <a href="">
+                        <img src="{$v1['imgurl']}" alt="">
+                    </a>
+                </div>
+
+                <div class="news-details-right">
+                    <div class="news-details-title">
+                        <a href="">{$v1['ctitle']}</a>
+                    </div>
+                    <div class="news-details-line"></div>
+                    <div class="news-details-date">发布日期：&ensp;{date('Y-m-d',strtotime($v1['date']))}</div>
+                    <div class="news-details-bottom">{$v1['info']}</div>
+                </div>
+
+            </div>
+
+        </div>
+        {/foreach}
+        <div class="showMore-box">
+            <div class="showMore">
+                <span>查看更多</span>
+                <span class="showMore-icon iconfont">&#xe664;</span>
+            </div>
+        </div>
+    </div>
+</div>
+{/foreach}
+
+
+
+
+
+<!-- 论坛动态结束 -->
+
+{include file=$footer}
+</body>
+</html>
